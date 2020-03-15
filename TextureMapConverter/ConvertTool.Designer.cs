@@ -1,6 +1,6 @@
 ﻿namespace TextureMapConverter
 {
-    partial class Form1
+    partial class ConvertTool
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConvertTool));
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_InputTexture = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,7 +118,6 @@
             this.OutputMapPath.Name = "OutputMapPath";
             this.OutputMapPath.Size = new System.Drawing.Size(538, 20);
             this.OutputMapPath.TabIndex = 9;
-            this.OutputMapPath.TextChanged += new System.EventHandler(this.validatePaths);
             // 
             // InputMapPath
             // 
@@ -129,7 +128,6 @@
             this.InputMapPath.Size = new System.Drawing.Size(538, 20);
             this.InputMapPath.TabIndex = 1;
             this.InputMapPath.TabStop = false;
-            this.InputMapPath.TextChanged += new System.EventHandler(this.validatePaths);
             // 
             // ImageIn
             // 
@@ -211,7 +209,7 @@
             this.hidden.Text = "hidden";
             this.hidden.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // ConvertTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -232,7 +230,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuStrip;
             this.MinimumSize = new System.Drawing.Size(568, 406);
-            this.Name = "Form1";
+            this.Name = "ConvertTool";
             this.Text = "Texture Map Converter";
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();

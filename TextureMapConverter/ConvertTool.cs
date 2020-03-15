@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace TextureMapConverter
 {
-    public partial class Form1 : Form
+    public partial class ConvertTool : Form
     {
         private FilePath inputImage { get; set; }
         private FilePath inputMap { get; set; }
@@ -32,7 +32,7 @@ namespace TextureMapConverter
             }
         }
 
-        public Form1()
+        public ConvertTool()
         {
             InitializeComponent();
 
@@ -58,7 +58,7 @@ namespace TextureMapConverter
             };
         }
 
-        private void validatePaths(object sender = null, EventArgs e = null)
+        private void validatePaths()
         {
             this.inputImage.ValidateFile();
             this.inputMap.ValidateFile();
