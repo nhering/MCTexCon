@@ -26,7 +26,7 @@ namespace MCTexConCLI
             string mapOutPath = @"C:\Users\nheri\Desktop\MCTexConTest\MapOut.json";
 
             MCTexCon.MCTexCon converter = new MCTexCon.MCTexCon(imageInPath, imageOutPath, mapInPath, mapOutPath);
-            converter.SaveNewTexMapToFile();
+            converter.SaveToFile();
 
             //Console.ReadLine();
         }

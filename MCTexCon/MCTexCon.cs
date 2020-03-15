@@ -25,7 +25,7 @@ namespace MCTexCon
 
         #endregion
         
-        #region Desktop API
+        #region Console API
 
         private string _outputPath { get; set; }
 
@@ -83,16 +83,39 @@ namespace MCTexCon
                 throw;
             }
         }
-
-        public void SaveNewTexMapToFile()
+                
+        public void SaveToFile()
         {
             try
             {
                 Convert();
 
-                SaveOutput();
+                using (MemoryStream stream = ImageToStream(this._imageOut, ImageFormat.Png))
+                {
+                    StreamWriter writer = new StreamWriter(stream);
+                    stream.Seek(0, SeekOrigin.Begin);
+
+                    using (FileStream fileStream = new FileStream(this._outputPath, FileMode.OpenOrCreate))
+                    {
+                        stream.CopyTo(fileStream);
+                        fileStream.Flush();
+                    }
+                }
 
                 CleanUp();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public Image GetConvertedImage()
+        {
+            try
+            {
+                Convert();
+                return this._imageOut;
             }
             catch (Exception e)
             {
@@ -186,8 +209,6 @@ namespace MCTexCon
             {
                 foreach (TexBlock block in this._mapIn.texBlocks)
                 {
-                    //TODO: Test if this works. Might need to make
-                    //      this resiliant to nullObj ref.
                     AddImageToTexBlock(block);
                 }
             }
@@ -276,8 +297,8 @@ namespace MCTexCon
                 {
                     for (int y = 0; y < block.image.Height; y++)
                     {
-                        Color pixelColor = block.image.GetPixel(x, y);
-                        Color newColor = Color.FromArgb(pixelColor.R, 0, 0);
+                        Color pxl = block.image.GetPixel(x, y);
+                        Color newColor = Color.FromArgb(pxl.A, pxl.R, pxl.G, pxl.B);
                         this._transformImageOut.SetPixel(x + xOffset, y + yOffset, newColor);
                     }
                 }
@@ -287,25 +308,13 @@ namespace MCTexCon
                 throw;
             }
         }
-        
-        private void SaveOutput()
+
+        public static MemoryStream ImageToStream(Image image, ImageFormat format)
         {
-            try
-            {
-                if (!File.Exists(this._outputPath))
-                {
-                    File.Create(this._outputPath);
-                }
-
-                FileStream stream = new FileStream(this._outputPath, FileMode.Create, FileAccess.ReadWrite);
-
-
-                //this._imageOut.Save(this._outputPath, ImageFormat.Png);
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
+            var stream = new System.IO.MemoryStream();
+            image.Save(stream, format);
+            stream.Position = 0;
+            return stream;
         }
 
         private void CleanUp()

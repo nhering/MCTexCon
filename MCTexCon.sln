@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCTexCon", "MCTexCon\MCTexC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCTexConCLI", "MCTexConCLI\MCTexConCLI.csproj", "{256B9617-16E8-4578-ACDE-628B4C4CC512}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextureMapConverter", "TextureMapConverter\TextureMapConverter.csproj", "{34FF8EC8-3683-44B5-B848-B61E0BDA7A4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{256B9617-16E8-4578-ACDE-628B4C4CC512}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{256B9617-16E8-4578-ACDE-628B4C4CC512}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{256B9617-16E8-4578-ACDE-628B4C4CC512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34FF8EC8-3683-44B5-B848-B61E0BDA7A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34FF8EC8-3683-44B5-B848-B61E0BDA7A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34FF8EC8-3683-44B5-B848-B61E0BDA7A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34FF8EC8-3683-44B5-B848-B61E0BDA7A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MCTexCon")]
+[assembly: AssemblyTitle("TextureMapConverter")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Funtility LLC")]
-[assembly: AssemblyProduct("MCTexCon")]
+[assembly: AssemblyProduct("TextureMapConverter")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0568352b-8ed1-4919-94c9-4d7e1d0a9878")]
+[assembly: Guid("34ff8ec8-3683-44b5-b848-b61e0bda7a4a")]
 
 // Version information for an assembly consists of the following four values:
 //
